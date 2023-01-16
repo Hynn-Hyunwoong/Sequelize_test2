@@ -3,7 +3,7 @@
 // 2) Class Setting / Usage
 // 3) Exports Class functions 
 module.exports = (sequelize, Sequelize) => {
-    class User extends Sequelize.model {
+    class User extends Sequelize.Model {
         static initialize() {
             // super === this, this is very important. (Different situations)
             return super.init({
@@ -38,7 +38,16 @@ module.exports = (sequelize, Sequelize) => {
         }
 
         static associate(models){
-
+            super.hasMany(models.Board, {
+                foreignKey : "userId",
+            })
+            super.hasMany(models.Comment, {
+                foreignKey : "userId",
+            })
+            super.belongsToMany(models.Board, {
+                through : "Liked",
+                foreignKey : "userId"
+            })
         }
     }
     
