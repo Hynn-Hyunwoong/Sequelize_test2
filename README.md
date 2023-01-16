@@ -54,3 +54,10 @@ CREATE TABLE person(
 6) hashtag
 - boardid 
 - tag
+```
+### Add to Feature ###
+1. Create Board 
+2. Read Board-List
+> Board Comment + Like , Hashtag
+3.  
+

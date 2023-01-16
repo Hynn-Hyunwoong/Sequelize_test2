@@ -9,7 +9,7 @@ const config = {
             dialect : 'mysql',
             define : {
                 freezeTableName : true,
-                timestamps : false
+                timestamps : true
             }
         }
     }
